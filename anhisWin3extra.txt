@@ -1732,9 +1732,15 @@ table.skai-table tbody tr:hover{background:rgba(28,102,255,.04)}
                 <strong>Rationale:</strong> <?php echo htmlspecialchars((string) $play['rationale'], ENT_QUOTES, 'UTF-8'); ?>
               </div>
               <div class="skai-play-cta-row">
+                <?php
+                $playMainAttr = implode('-', (array) $play['digits']);
+                if ((string) $play['bonus_digit'] !== '') {
+                    $playMainAttr .= ' | ' . $play['bonus_label'] . ': ' . $play['bonus_digit'];
+                }
+                ?>
                 <button class="skai-button js-save-strategy" type="button"
                   data-strategy="<?php echo htmlspecialchars((string) $play['title'], ENT_QUOTES, 'UTF-8'); ?>"
-                  data-main="<?php echo htmlspecialchars(implode('-', (array) $play['digits']) . ((string) $play['bonus_digit'] !== '' ? ' | ' . $play['bonus_label'] . ': ' . $play['bonus_digit'] : ''), ENT_QUOTES, 'UTF-8'); ?>">
+                  data-main="<?php echo htmlspecialchars($playMainAttr, ENT_QUOTES, 'UTF-8'); ?>">
                   Save this strategy
                 </button>
               </div>
