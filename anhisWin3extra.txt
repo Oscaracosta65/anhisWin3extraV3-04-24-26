@@ -724,14 +724,7 @@ function leLabelFromPosition(string $position): string
 
 function lePad2(string $value): string
 {
-    $value = trim((string) $value);
-    if ($value === '') {
-        return '';
-    }
-    if (ctype_digit($value) && strlen($value) === 1) {
-        return '0' . $value;
-    }
-    return $value;
+    return trim((string) $value);
 }
 
 function leFmtDateLong(?string $date): string
