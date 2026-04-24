@@ -537,116 +537,7 @@ $query->bind(':gameId', $mainGameId, \Joomla\Database\ParameterType::STRING);
 $db->setQuery($query);
 $totalDrawings = $db->loadResult();
 
-// Sanitize and validate POST inputs with CSRF protection
 $totalDrawingsInt = max(10, (int) $totalDrawings);
-$drawRange = 100;
-if (!empty($_POST) && isset($_POST['drawRange'])) {
-    if (Session::checkToken('post')) {
-        $drawRange = filter_var($_POST['drawRange'], FILTER_VALIDATE_INT, [
-            'options' => ['default' => 100, 'min_range' => 10, 'max_range' => $totalDrawingsInt]
-        ]);
-    }
-}
-
-// Functions for getting frequencies and last draw details
-function getDigitFrequencies($db, $dbCol, $position, $drawRange, $gameId) {
-    $query = $db->getQuery(true)
-        ->select($db->quoteName($position))
-        ->from($db->quoteName($dbCol))
-        ->where($db->quoteName('game_id') . ' = :gameId')
-        ->order($db->quoteName('draw_date') . ' DESC')
-        ->setLimit($drawRange);
-    $query->bind(':gameId', $gameId, \Joomla\Database\ParameterType::STRING);
-    $db->setQuery($query);
-    return array_count_values($db->loadColumn());
-}
-
-function getLastDrawnAndCount($db, $dbCol, $digit, $position, $gameId, $drawRange) {
-    $query = $db->getQuery(true)
-        ->select('MAX(' . $db->quoteName('draw_date') . ') AS last_draw_date')
-        ->from($db->quoteName($dbCol))
-        ->where($db->quoteName($position) . ' = :digit')
-        ->where($db->quoteName('game_id') . ' = :gameId');
-    $query->bind(':digit', $digit, \Joomla\Database\ParameterType::INTEGER);
-    $query->bind(':gameId', $gameId, \Joomla\Database\ParameterType::STRING);
-    $db->setQuery($query);
-    $lastDrawDate = $db->loadResult();
-
-    if ($lastDrawDate) {
-        $query = $db->getQuery(true)
-            ->select('COUNT(*)')
-            ->from($db->quoteName($dbCol))
-            ->where($db->quoteName('draw_date') . ' > :lastDrawDate')
-            ->where($db->quoteName('game_id') . ' = :gameId')
-            ->where($db->quoteName('draw_date') . ' <= NOW()');
-        $query->bind(':lastDrawDate', $lastDrawDate, \Joomla\Database\ParameterType::STRING);
-        $query->bind(':gameId', $gameId, \Joomla\Database\ParameterType::STRING);
-        $db->setQuery($query);
-        return $db->loadResult() . ' drws ago';
-    } else {
-        return "Not in last $drawRange dr.";
-    }
-}
-
-function getOverallFrequencies($db, $dbCol, $drawRange, $gameId) {
-    $frequencies = [];
-    $query = $db->getQuery(true)
-        ->select($db->quoteName(['first', 'second', 'third']))
-        ->from($db->quoteName($dbCol))
-        ->where($db->quoteName('game_id') . ' = :gameId')
-        ->order($db->quoteName('draw_date') . ' DESC')
-        ->setLimit($drawRange);
-    $query->bind(':gameId', $gameId, \Joomla\Database\ParameterType::STRING);
-    $db->setQuery($query);
-    $results = $db->loadObjectList();
-
-    foreach ($results as $result) {
-        // Validate each position is a single digit 0-9 before concatenation
-        $d1 = (string) $result->first;
-        $d2 = (string) $result->second;
-        $d3 = (string) $result->third;
-        if (!preg_match('/^[0-9]$/', $d1) || !preg_match('/^[0-9]$/', $d2) || !preg_match('/^[0-9]$/', $d3)) {
-            continue;
-        }
-        $threeDigitNumber = $d1 . $d2 . $d3;
-
-        if (!isset($frequencies[$threeDigitNumber])) {
-            $frequencies[$threeDigitNumber] = 0;
-        }
-        $frequencies[$threeDigitNumber]++;
-    }
-
-    arsort($frequencies); // Sort by frequency, highest first
-    return $frequencies;
-}
-
-function getDrawingsAgo($db, $dbCol, $threeDigitNumber, $gameId, $drawRange) {
-    $query = $db->getQuery(true)
-        ->select('MAX(' . $db->quoteName('draw_date') . ')')
-        ->from($db->quoteName($dbCol))
-        ->where('CONCAT(' . $db->quoteName('first') . ', ' . $db->quoteName('second') . ', ' . $db->quoteName('third') . ') = :threeDigitNumber')
-        ->where($db->quoteName('game_id') . ' = :gameId');
-    $query->bind(':threeDigitNumber', $threeDigitNumber, \Joomla\Database\ParameterType::STRING);
-    $query->bind(':gameId', $gameId, \Joomla\Database\ParameterType::STRING);
-    $db->setQuery($query);
-    $lastDrawDate = $db->loadResult();
-
-    if ($lastDrawDate) {
-        $query = $db->getQuery(true)
-            ->select('COUNT(*)')
-            ->from($db->quoteName($dbCol))
-            ->where($db->quoteName('draw_date') . ' > :lastDrawDate')
-            ->where($db->quoteName('game_id') . ' = :gameId');
-        $query->bind(':lastDrawDate', $lastDrawDate, \Joomla\Database\ParameterType::STRING);
-        $query->bind(':gameId', $gameId, \Joomla\Database\ParameterType::STRING);
-        $db->setQuery($query);
-        $drawsAgo = $db->loadResult() . ' drws ago';
-    } else {
-        $drawsAgo = "Not in last $drawRange dr.";
-    }
-
-    return $drawsAgo;
-}
 
 // Function to get the latest result, including the extra ball if available
 function getLatestResult($db, $dbCol, $mainGameId, $extraBallGameId = null, $fallbackGameId = null) {
@@ -722,15 +613,6 @@ function getLatestResult($db, $dbCol, $mainGameId, $extraBallGameId = null, $fal
 $latestResult = getLatestResult($db, $dbCol, $mainGameId, $extraBallGId, $gId);
 
 if ($latestResult) {
-    $draw_date      = $latestResult->draw_date;
-    $next_draw_date = $latestResult->next_draw_date;
-    $next_jackpot   = $latestResult->next_jackpot;
-
-    $p1 = $latestResult->first;
-    $p2 = $latestResult->second;
-    $p3 = $latestResult->third;
-
-    $pb = isset($latestResult->extra_ball) ? $latestResult->extra_ball : null;
 }
 
 /**
