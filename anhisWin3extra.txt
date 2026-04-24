@@ -972,8 +972,6 @@ foreach ($bonusSlots as $slotIndex => $slotCfg) {
     }
 }
 
-$hasLatestMain = !empty($latestMain);
-
 // draw range
 $drawRange = 100;
 if ($totalDrawingsInt < 10) {
@@ -1693,7 +1691,7 @@ table.skai-table tbody tr:hover{background:rgba(28,102,255,.04)}
               </div>
               <div class="skai-play-balls" aria-label="<?php echo htmlspecialchars((string) $play['title'], ENT_QUOTES, 'UTF-8'); ?> digits">
                 <?php foreach ((array) $play['digits'] as $idx => $dig) : ?>
-                  <span class="skai-ball skai-ball--main" title="<?php echo htmlspecialchars(isset($mainPositions[$idx]) ? leLabelFromPosition($mainPositions[$idx]) : 'Position ' . ((int)$idx + 1), ENT_QUOTES, 'UTF-8'); ?> position"><?php echo htmlspecialchars(lePad2((string) $dig), ENT_QUOTES, 'UTF-8'); ?></span>
+                  <span class="skai-ball skai-ball--main" title="<?php echo htmlspecialchars(isset($mainPositions[$idx]) ? leLabelFromPosition($mainPositions[$idx]) : 'Position ' . ((int) $idx + 1), ENT_QUOTES, 'UTF-8'); ?> position"><?php echo htmlspecialchars(lePad2((string) $dig), ENT_QUOTES, 'UTF-8'); ?></span>
                 <?php endforeach; ?>
               </div>
               <div class="skai-play-meta">
