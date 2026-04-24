@@ -1360,6 +1360,149 @@ $datasetSchema = [
     'keywords' => [(string) $lotteryName, 'results analysis', 'frequency', 'recency', 'draw history', 'bonus ball'],
     'isAccessibleForFree' => true
 ];
+
+// -------------------------------------------------------------------------
+// Pick 3 position-based play recommendations (daily-game adaptation)
+// Each recommendation selects one digit per position using verified signals
+// from this page's own positionFrequency and positionLastSeen data.
+// No jackpot facts, odds, or payout amounts are included here.
+// -------------------------------------------------------------------------
+$pick3Plays = [];
+$posPlayRecs = [];
+foreach ($mainPositions as $pos) {
+    $pf = $positionFrequency[$pos];
+    arsort($pf, SORT_NUMERIC);
+    $pActive = array_slice(array_keys($pf), 0, 5);
+
+    $pRecDist = [];
+    foreach ($positionLastSeen[$pos] as $d => $idx) {
+        $pRecDist[$d] = ($idx < 0) ? ($drawRange + 1) : ($idx + 1);
+    }
+    arsort($pRecDist, SORT_NUMERIC);
+    $pQuiet = array_slice(array_keys($pRecDist), 0, 5);
+
+    $posPlayRecs[$pos] = [
+        'active' => $pActive,
+        'quiet'  => $pQuiet,
+        'label'  => leLabelFromPosition($pos),
+    ];
+}
+
+$recPositionActive   = [];
+$recPositionQuiet    = [];
+$recPositionBalanced = [];
+$recCrossPool        = [];
+$cpDigits = array_slice($topActiveLabels, 0, max(3, count($mainPositions)));
+$pIdx3 = 0;
+foreach ($mainPositions as $pos) {
+    $recPositionActive[]   = isset($posPlayRecs[$pos]['active'][0]) ? (string) $posPlayRecs[$pos]['active'][0] : '0';
+    $recPositionQuiet[]    = isset($posPlayRecs[$pos]['quiet'][0])  ? (string) $posPlayRecs[$pos]['quiet'][0]  : '0';
+    $recPositionBalanced[] = ($pIdx3 % 2 === 0)
+        ? (isset($posPlayRecs[$pos]['active'][0]) ? (string) $posPlayRecs[$pos]['active'][0] : '0')
+        : (isset($posPlayRecs[$pos]['quiet'][0])  ? (string) $posPlayRecs[$pos]['quiet'][0]  : '0');
+    $recCrossPool[]        = isset($cpDigits[$pIdx3]) ? (string) $cpDigits[$pIdx3] : '0';
+    $pIdx3++;
+}
+
+$pick3Plays = [
+    [
+        'id'         => 'position-active',
+        'title'      => 'Position-Active Play',
+        'strategy'   => 'Top-frequency digit at each position',
+        'digits'     => $recPositionActive,
+        'rationale'  => 'Uses the most frequently drawn digit in each individual position within the current window.',
+        'risk_style' => 'High-frequency, position-specific',
+    ],
+    [
+        'id'         => 'position-quiet',
+        'title'      => 'Quiet-Stretch Play',
+        'strategy'   => 'Longest-absent digit at each position',
+        'digits'     => $recPositionQuiet,
+        'rationale'  => 'Selects the digit with the longest absence at each position. Interpretive context only — not a prediction.',
+        'risk_style' => 'Recency-based, exploratory',
+    ],
+    [
+        'id'         => 'balanced',
+        'title'      => 'Balanced Position Play',
+        'strategy'   => 'Alternating active and quiet signals',
+        'digits'     => $recPositionBalanced,
+        'rationale'  => 'Alternates between active and quiet signals per position to avoid over-committing to one frequency band.',
+        'risk_style' => 'Mixed-signal, moderate',
+    ],
+    [
+        'id'         => 'cross-pool',
+        'title'      => 'Cross-Pool Active Play',
+        'strategy'   => 'Combined-pool frequency leaders',
+        'digits'     => $recCrossPool,
+        'rationale'  => 'Uses the top digits from the combined main pool across all positions regardless of individual position data.',
+        'risk_style' => 'Cross-position, frequency-based',
+    ],
+];
+
+// -------------------------------------------------------------------------
+// Bankroll plans adapted for daily-draw games
+// No ticket prices are specified here — amounts are generic budget examples
+// only. Always verify actual ticket price at the official lottery website.
+// -------------------------------------------------------------------------
+$bankrollPlansDaily = [
+    [
+        'budget'   => 'Minimal — $1 per draw',
+        'lines'    => '1 line',
+        'style'    => 'Single position-active play',
+        'priority' => 'Stick to one consistent play and track results over time.',
+        'note'     => 'Focused and trackable — ideal for beginners.',
+    ],
+    [
+        'budget'   => 'Light — $2 per draw',
+        'lines'    => '2 lines',
+        'style'    => 'Position-active + balanced play',
+        'priority' => 'Keep one frequency-based play with a mixed-signal backup.',
+        'note'     => 'Two-line structure helps compare different signal sources.',
+    ],
+    [
+        'budget'   => 'Moderate — $5 per draw',
+        'lines'    => '5 lines',
+        'style'    => 'Mix of all four position profile types, plus one rotation',
+        'priority' => 'Cover each signal family across the draw window to track behavioral patterns.',
+        'note'     => 'Better for analytical tracking over a larger daily sample.',
+    ],
+    [
+        'budget'   => 'Structured — $10 per draw',
+        'lines'    => '10 lines',
+        'style'    => 'Full profile rotation plus extras',
+        'priority' => 'Systematic rotation across all position data signals.',
+        'note'     => 'Structured coverage for deeper behavioral comparison across positions.',
+    ],
+];
+
+// -------------------------------------------------------------------------
+// Guide / FAQ snippets for Pick 3 daily game
+// -------------------------------------------------------------------------
+$bonusLabelForFaq = (!empty($bonusSlots) && !empty($bonusSlots[0]['label']))
+    ? htmlspecialchars((string) $bonusSlots[0]['label'], ENT_QUOTES, 'UTF-8')
+    : 'extra ball';
+$guideFaq = [
+    [
+        'q' => 'Do position frequencies predict the next draw?',
+        'a' => 'No. Position frequencies summarize historical behavior within the selected window. Each draw is an independent event and historical patterns do not guarantee future outcomes.',
+    ],
+    [
+        'q' => 'What is the ' . $bonusLabelForFaq . '?',
+        'a' => 'The ' . $bonusLabelForFaq . ' is drawn separately alongside the main digits. It is stored in a separate game record in our system. Always verify exact payout rules and eligibility at the official state lottery website.',
+    ],
+    [
+        'q' => 'How is the combination frequency table useful?',
+        'a' => 'It shows which exact ' . (int) $mainBallCount . '-digit numbers have appeared most often in the selected window. Use this as historical context only, not as a selection guide.',
+    ],
+    [
+        'q' => 'Why show recency data alongside frequency?',
+        'a' => 'Recency helps visualize how long a particular digit has been absent from a specific position. Combined with frequency, it gives a broader behavioral picture than frequency data alone.',
+    ],
+    [
+        'q' => 'How should I use the position-based play recommendations?',
+        'a' => 'These are structured planning frameworks built from historical frequency and recency data. They help you organize choices with clearer context. They are not predictions and each draw remains independent.',
+    ],
+];
 ?>
 <style>
 :root{
@@ -1498,6 +1641,34 @@ table.skai-table tbody tr:hover{background:rgba(28,102,255,.04)}
 .skai-method-note strong{color:var(--deep-navy)}
 @media (max-width:1080px){.skai-hero-top{grid-template-columns:96px minmax(0,1fr)}.skai-result-panel{grid-column:1 / -1}.skai-strip,.skai-tool-grid,.skai-overview-grid,.skai-two-col{grid-template-columns:1fr}.skai-hero-actions,.skai-advanced-links{grid-template-columns:1fr}.skai-utility-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.skai-chart-frame--tall{height:420px}}
 @media (max-width:780px){.skai-page{padding:14px 10px 24px}.skai-title{font-size:26px}.skai-section-head{padding:16px 14px 12px}.skai-section-body{padding:14px}.skai-strip{grid-template-columns:1fr}.skai-history-item{grid-template-columns:1fr;align-items:start}.skai-meta-row{grid-template-columns:1fr}.skai-tabs{border-radius:18px}.skai-utility-grid{grid-template-columns:1fr 1fr}}
+.skai-simple-note{margin-top:12px;padding:12px 14px;border-radius:14px;border:1px solid rgba(28,102,255,.16);background:linear-gradient(180deg,rgba(28,102,255,.05) 0%,#FFFFFF 100%);color:var(--text-soft);font-size:13px;line-height:1.65}
+.skai-simple-note strong{color:var(--deep-navy)}
+.skai-play-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.skai-play-card{border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 10px 24px rgba(10,26,51,.06);overflow:hidden}
+.skai-play-body{padding:14px 16px 16px}
+.skai-tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.skai-tag{display:inline-flex;align-items:center;min-height:28px;padding:6px 10px;border-radius:999px;font-size:11px;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;font-weight:850;border:1px solid var(--line);color:var(--deep-navy);background:#F8FAFE}
+.skai-play-balls{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;align-items:center}
+.skai-play-meta{margin:10px 0 0;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:linear-gradient(180deg,#FFFFFF 0%,#FAFBFF 100%);font-size:13px;line-height:1.6;color:var(--text-soft)}
+.skai-play-meta strong{color:var(--deep-navy)}
+.skai-play-cta-row{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+.skai-button--ghost{min-height:44px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--deep-navy);font-size:13px;line-height:1.2;font-weight:850;cursor:pointer}
+.skai-button--ghost:hover{background:var(--sky-gray)}
+.skai-strategy-status{margin-top:10px;min-height:20px;font-size:12px;line-height:1.5;color:var(--soft-slate)}
+.skai-bankroll-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.skai-bankroll-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:14px}
+.skai-bankroll-title{margin:0 0 10px;font-size:16px;line-height:1.2;font-weight:900;color:var(--deep-navy)}
+.skai-bankroll-copy{margin:0 0 8px;font-size:13px;line-height:1.6;color:var(--text-soft)}
+.skai-guide-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+.skai-guide-panel{border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#FFFFFF 0%,#FAFBFF 100%);padding:14px}
+.skai-guide-panel h3{margin:0 0 10px;font-size:16px;line-height:1.25;font-weight:900;color:var(--deep-navy)}
+.skai-guide-panel p,.skai-guide-panel li{font-size:14px;line-height:1.7;color:var(--text-soft)}
+.skai-guide-panel ul{margin:8px 0 0 18px;padding:0}
+.skai-faq-item{margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.skai-faq-item:first-child{margin-top:0;padding-top:0;border-top:none}
+.skai-faq-q{margin:0;font-size:14px;line-height:1.45;font-weight:850;color:var(--deep-navy)}
+.skai-faq-a{margin:6px 0 0;font-size:13px;line-height:1.65;color:var(--text-soft)}
+@media (max-width:1080px){.skai-play-grid,.skai-bankroll-grid,.skai-guide-grid{grid-template-columns:1fr}}
 @media (prefers-reduced-motion: reduce){.skai-btn,.skai-button{transition:none}}
 </style>
 
@@ -1572,12 +1743,56 @@ table.skai-table tbody tr:hover{background:rgba(28,102,255,.04)}
   </section>
 
   <nav class="skai-tabs" aria-label="Page navigation">
-    <a class="skai-tab skai-tab--active" href="#overview">Overview</a>
-    <a class="skai-tab" href="#frequency-deep-dive">Frequency</a>
+    <a class="skai-tab skai-tab--active" href="#best-plays">Best Plays</a>
+    <a class="skai-tab" href="#overview">Overview</a>
     <a class="skai-tab" href="#recency-deep-dive">Recency</a>
+    <a class="skai-tab" href="#frequency-deep-dive">Frequency</a>
     <a class="skai-tab" href="#tables">Tables</a>
+    <a class="skai-tab" href="#bankroll-planner">Bankroll</a>
     <a class="skai-tab" href="#tools">Advanced Tools</a>
+    <a class="skai-tab" href="#lottery-guide">Guide &amp; FAQ</a>
   </nav>
+
+  <section id="best-plays" class="skai-section" aria-labelledby="best-plays-title">
+    <div class="skai-section-head"><div><h2 id="best-plays-title" class="skai-section-title">Best plays for selected window</h2><p class="skai-section-sub">Structured digit recommendation profiles generated from this page&rsquo;s position frequency and recency signals for the current analysis window. These are planning templates, not predictions. Each draw remains independent.</p></div></div>
+    <div class="skai-section-body">
+      <div class="skai-play-grid">
+        <?php foreach ($pick3Plays as $play) : ?>
+          <article class="skai-play-card">
+            <div class="skai-card-head skai-card-head--horizon">
+              <?php echo htmlspecialchars((string) $play['title'], ENT_QUOTES, 'UTF-8'); ?>
+              <span class="skai-card-sub"><?php echo htmlspecialchars((string) $play['strategy'], ENT_QUOTES, 'UTF-8'); ?></span>
+            </div>
+            <div class="skai-play-body">
+              <div class="skai-tag-row">
+                <span class="skai-tag"><?php echo htmlspecialchars((string) $play['risk_style'], ENT_QUOTES, 'UTF-8'); ?></span>
+                <span class="skai-tag"><?php echo (int) $mainBallCount; ?> positions</span>
+              </div>
+              <div class="skai-play-balls" aria-label="<?php echo htmlspecialchars((string) $play['title'], ENT_QUOTES, 'UTF-8'); ?> digits">
+                <?php foreach ((array) $play['digits'] as $idx => $dig) : ?>
+                  <span class="skai-ball skai-ball--main" title="<?php echo htmlspecialchars(isset($mainPositions[$idx]) ? leLabelFromPosition($mainPositions[$idx]) : 'Position ' . ((int)$idx + 1), ENT_QUOTES, 'UTF-8'); ?> position"><?php echo htmlspecialchars(lePad2((string) $dig), ENT_QUOTES, 'UTF-8'); ?></span>
+                <?php endforeach; ?>
+              </div>
+              <div class="skai-play-meta">
+                <strong>Rationale:</strong> <?php echo htmlspecialchars((string) $play['rationale'], ENT_QUOTES, 'UTF-8'); ?>
+              </div>
+              <div class="skai-play-cta-row">
+                <button class="skai-button js-save-strategy" type="button"
+                  data-strategy="<?php echo htmlspecialchars((string) $play['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                  data-main="<?php echo htmlspecialchars(implode('-', (array) $play['digits']), ENT_QUOTES, 'UTF-8'); ?>">
+                  Save this strategy
+                </button>
+              </div>
+            </div>
+          </article>
+        <?php endforeach; ?>
+      </div>
+      <div class="skai-simple-note">
+        <strong>Simple explanation:</strong> Each profile selects one digit per position based on a different signal priority. Comparing profiles side-by-side helps you structure choices rather than selecting lines randomly. A profile can still miss because every draw is independent.
+      </div>
+      <div id="strategySaveStatus" class="skai-strategy-status" aria-live="polite"></div>
+    </div>
+  </section>
 
   <section id="overview" class="skai-section" aria-labelledby="overview-title">
     <div class="skai-section-head"><div><h2 id="overview-title" class="skai-section-title">Overview</h2><p class="skai-section-sub">Start with a clear high-level view. This layer is designed for fast orientation: which digits are most active, which are quiet, and how the current draw relates to recent history.</p></div></div>
@@ -1727,6 +1942,54 @@ table.skai-table tbody tr:hover{background:rgba(28,102,255,.04)}
         <a class="skai-utility-link" href="<?php echo htmlspecialchars((string) $heatmapLink, ENT_QUOTES, 'UTF-8'); ?>">Heatmap Analysis</a>
         <a class="skai-utility-link" href="<?php echo htmlspecialchars((string) $archivesLink, ENT_QUOTES, 'UTF-8'); ?>">Lottery Archives</a>
         <a class="skai-utility-link" href="<?php echo htmlspecialchars((string) $lowestLink, ENT_QUOTES, 'UTF-8'); ?>">Lowest Number Analysis</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="bankroll-planner" class="skai-section" aria-labelledby="bankroll-planner-title">
+    <div class="skai-section-head"><div><h2 id="bankroll-planner-title" class="skai-section-title">Bankroll planner</h2><p class="skai-section-sub">Daily-draw games run every day — sometimes twice. These generic budget frameworks help you plan how many lines to use per draw without over-committing. They are not guarantees of outcome. Always verify current ticket prices at the official state lottery website before play.</p></div></div>
+    <div class="skai-section-body">
+      <div class="skai-bankroll-grid">
+        <?php foreach ($bankrollPlansDaily as $plan) : ?>
+          <div class="skai-bankroll-card">
+            <h3 class="skai-bankroll-title"><?php echo htmlspecialchars((string) $plan['budget'], ENT_QUOTES, 'UTF-8'); ?></h3>
+            <p class="skai-bankroll-copy"><strong>Lines per draw:</strong> <?php echo htmlspecialchars((string) $plan['lines'], ENT_QUOTES, 'UTF-8'); ?></p>
+            <p class="skai-bankroll-copy"><strong>Play style:</strong> <?php echo htmlspecialchars((string) $plan['style'], ENT_QUOTES, 'UTF-8'); ?></p>
+            <p class="skai-bankroll-copy"><strong>Priority:</strong> <?php echo htmlspecialchars((string) $plan['priority'], ENT_QUOTES, 'UTF-8'); ?></p>
+            <p class="skai-bankroll-copy" style="color:var(--soft-slate)"><?php echo htmlspecialchars((string) $plan['note'], ENT_QUOTES, 'UTF-8'); ?></p>
+          </div>
+        <?php endforeach; ?>
+      </div>
+      <div class="skai-note">Budget examples are generic structures. Ticket prices and play formats vary by state and game. Always verify before purchasing. These frameworks do not improve your odds — they help you organize your play consistently.</div>
+    </div>
+  </section>
+
+  <section id="lottery-guide" class="skai-section" aria-labelledby="lottery-guide-title">
+    <div class="skai-section-head"><div><h2 id="lottery-guide-title" class="skai-section-title">Guide &amp; FAQ</h2><p class="skai-section-sub">Answers to common questions about how this page works, what the data means, and how to interpret frequency and recency signals for this daily game.</p></div></div>
+    <div class="skai-section-body">
+      <div class="skai-guide-grid">
+        <div class="skai-guide-panel">
+          <h3>How to read this page</h3>
+          <p>This page presents verified historical draw data for <?php echo htmlspecialchars((string) $lotteryName, ENT_QUOTES, 'UTF-8'); ?> in <?php echo htmlspecialchars((string) $stateName, ENT_QUOTES, 'UTF-8'); ?>. The analysis is organized into four layers:</p>
+          <ul>
+            <li><strong>Best plays:</strong> Structured digit recommendations per position based on frequency and recency.</li>
+            <li><strong>Overview:</strong> Quick snapshot of the most active and quietest digits in the current window.</li>
+            <li><strong>Recency &amp; draw history:</strong> How recently each digit appeared and how the latest draw compares.</li>
+            <li><strong>Frequency deep dive:</strong> Full digit distribution by position and across the combined pool.</li>
+          </ul>
+          <p style="margin-top:12px">Use these layers in sequence — start with best plays for quick orientation, then move into the deeper data if you want more context.</p>
+        </div>
+        <div class="skai-guide-panel">
+          <h3>Frequently asked questions</h3>
+          <div>
+            <?php foreach ($guideFaq as $faq) : ?>
+              <div class="skai-faq-item">
+                <p class="skai-faq-q"><?php echo htmlspecialchars((string) $faq['q'], ENT_QUOTES, 'UTF-8'); ?></p>
+                <p class="skai-faq-a"><?php echo htmlspecialchars((string) $faq['a'], ENT_QUOTES, 'UTF-8'); ?></p>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2046,10 +2309,29 @@ table.skai-table tbody tr:hover{background:rgba(28,102,255,.04)}
     }
   }
 
+  function bindStrategySave() {
+    var buttons = document.querySelectorAll('.js-save-strategy');
+    var statusEl = document.getElementById('strategySaveStatus');
+    if (!buttons.length) {
+      return;
+    }
+    var i;
+    for (i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', function () {
+        var strategy = this.getAttribute('data-strategy') || '';
+        var main = this.getAttribute('data-main') || '';
+        if (statusEl) {
+          statusEl.textContent = 'Strategy saved: ' + strategy + (main ? ' (' + main + ')' : '') + '. Use your browser notes or copy this for reference.';
+        }
+      });
+    }
+  }
+
   function init() {
     bindTrackers();
     bindFilters();
     initAnchors();
+    bindStrategySave();
     loadChartJsWithRetry(renderChartsWithRetries);
   }
 
