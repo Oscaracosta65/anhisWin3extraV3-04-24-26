@@ -1,0 +1,2050 @@
+{
+  "lotteries": {
+    "101": {
+      "dbCol": "#__lotterydb_ar",
+      "gameId": "101",
+      "lotteryName": "Powerball",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 69,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 26,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "113": {
+      "dbCol": "#__lotterydb_ar",
+      "gameId": "113",
+      "lotteryName": "MEGA Millions",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 70,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 24,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "128": {
+      "dbCol": "#__lotterydb_me",
+      "gameId": "128",
+      "lotteryName": "Megabucks Plus",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 41,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 6,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "132": {
+      "dbCol": "#__lotterydb_ar",
+      "gameId": "132",
+      "lotteryName": "Lucky For Life",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 48,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 18,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	   "133": {
+      "dbCol": "#__lotterydb_me",
+      "gameId": "133",
+      "lotteryName": "Gimme 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 18,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "134": {
+      "dbCol": "#__lotterydb_fl",
+      "gameId": "134",
+      "lotteryName": "Cash4Life",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 60,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 4,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+      "145": {
+      "dbCol": "#__lotterydb_ky",
+      "gameId": "145",
+      "lotteryName": "Millionaire for Life",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 58,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 5,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "135": {
+      "dbCol": "#__lotterydb_de",
+      "gameId": "135",
+      "lotteryName": "Lotto America",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 52,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 10,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+         "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "801": {
+      "dbCol": "#__lotterydb_uk",
+      "gameId": "801",
+      "lotteryName": "EuroMillions",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 50,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 2,
+        "max_extra_ball_number": 12,
+        "extra_ball_columns": ["sixth","seventh"],
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "UK4": {
+      "dbCol": "#__lotterydb_uk",
+      "gameId": "UK4",
+      "lotteryName": "Thunderball",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 14,
+        "extra_ball_columns": ["sixth"],
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "UKL": {
+      "dbCol": "#__lotterydb_uk",
+      "gameId": "UKL",
+      "lotteryName": "Lunchtime 49s",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 49,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 49,
+        "extra_ball_columns": ["seventh"],
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "UKT": {
+      "dbCol": "#__lotterydb_uk",
+      "gameId": "UKT",
+      "lotteryName": "Teatime 49s",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 49,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 49,
+        "extra_ball_columns": ["seventh"],
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "UKH": {
+      "dbCol": "#__lotterydb_uk",
+      "gameId": "UKH",
+      "lotteryName": "Health Lottery",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 50,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 0,
+        "max_extra_ball_number": 49,
+        "extra_ball_columns": ["sixth"],
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "UK2": {
+      "dbCol": "#__lotterydb_uk",
+      "gameId": "UK2",
+      "lotteryName": "Lotto Hotpicks",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 59,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 49,
+        "extra_ball_columns": ["seventh"],
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "UK1": {
+      "dbCol": "#__lotterydb_uk",
+      "gameId": "UK1",
+      "lotteryName": "LOTTO",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 59,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 59,
+        "extra_ball_columns": ["seventh"],
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "IE6": {
+      "dbCol": "#__lotterydb_ie",
+      "gameId": "IE6",
+      "lotteryName": "Daily Million 2PM",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 39,
+        "extra_ball_columns": ["seventh"],
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "IE4": {
+      "dbCol": "#__lotterydb_ie",
+      "gameId": "IE4",
+      "lotteryName": "Daily Million 9PM",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 39,
+        "extra_ball_columns": ["seventh"],
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "IE7": {
+      "dbCol": "#__lotterydb_ie",
+      "gameId": "IE7",
+      "lotteryName": "Daily Million Plus 2PM",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 39,
+        "extra_ball_columns": ["seventh"],
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+  	  "IE5": {
+      "dbCol": "#__lotterydb_ie",
+      "gameId": "IE5",
+      "lotteryName": "Daily Million Plus 9PM",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 39,
+        "extra_ball_columns": ["seventh"],
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+   	  "IEP": {
+      "dbCol": "#__lotterydb_ie",
+      "gameId": "IEP",
+      "lotteryName": "EuroMillion Plus",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 50,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 39,
+        "extra_ball_columns": ["seventh"],
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+  	  "IE0": {
+      "dbCol": "#__lotterydb_ie",
+      "gameId": "IE0",
+      "lotteryName": "Irish Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 47,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 47,
+        "extra_ball_columns": ["seventh"],
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+  	  "IE1": {
+      "dbCol": "#__lotterydb_ie",
+      "gameId": "IE1",
+      "lotteryName": "Lotto Plus 1",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 47,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 47,
+        "extra_ball_columns": ["seventh"],
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+  	  "IE2": {
+      "dbCol": "#__lotterydb_ie",
+      "gameId": "IE2",
+      "lotteryName": "Lotto Plus 2",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 47,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 47,
+        "extra_ball_columns": ["seventh"],
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+      "AR1": {
+      "dbCol": "#__lotterydb_ar",
+      "gameId": "AR1",
+      "lotteryName": "Natural State Jackpot",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+      "AR2": {
+      "dbCol": "#__lotterydb_ar",
+      "gameId": "AR2",
+      "lotteryName": "Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 40,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "AZ2": {
+      "dbCol": "#__lotterydb_az",
+      "gameId": "AZ2",
+      "lotteryName": "Fantasy 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 41,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "AZT": {
+      "dbCol": "#__lotterydb_az",
+      "gameId": "AZT",
+      "lotteryName": "Triple Twist",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 42,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "AZ3": {
+      "dbCol": "#__lotterydb_az",
+      "gameId": "AZ3",
+      "lotteryName": "The Pick",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 44,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "CA1": {
+      "dbCol": "#__lotterydb_ca",
+      "gameId": "CA1",
+      "lotteryName": "SuperLotto Plus",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 47,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 27,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	   "CA2": {
+      "dbCol": "#__lotterydb_ca",
+      "gameId": "CA2",
+      "lotteryName": "Fantasy 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 27,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	   "CO2": {
+      "dbCol": "#__lotterydb_co",
+      "gameId": "CO2",
+      "lotteryName": "Cash 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 32,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 27,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "CO4": {
+      "dbCol": "#__lotterydb_co",
+      "gameId": "CO4",
+      "lotteryName": "Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 40,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 27,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "CT1": {
+      "dbCol": "#__lotterydb_ct",
+      "gameId": "CT1",
+      "lotteryName": "Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 44,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "CT2": {
+      "dbCol": "#__lotterydb_ct",
+      "gameId": "CT2",
+      "lotteryName": "Cash 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 35,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 27,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "DE2": {
+      "dbCol": "#__lotterydb_de",
+      "gameId": "DE2",
+      "lotteryName": "Multi-Win Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 35,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "FL1": {
+      "dbCol": "#__lotterydb_fl",
+      "gameId": "FL1",
+      "lotteryName": "Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 53,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+     "FL3": {
+      "dbCol": "#__lotterydb_fl",
+      "gameId": "FL3",
+      "lotteryName": "Fantasy 5 Evening",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 36,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+      "FL7": {
+      "dbCol": "#__lotterydb_fl",
+      "gameId": "FL7",
+      "lotteryName": "Fantasy 5 Midday",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 36,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "FL6": {
+      "dbCol": "#__lotterydb_fl",
+      "gameId": "FL6",
+      "lotteryName": "Jackpot Triple Play",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 46,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "GA2": {
+      "dbCol": "#__lotterydb_ga",
+      "gameId": "GA2",
+      "lotteryName": "Fantasy 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 42,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "GA1": {
+      "dbCol": "#__lotterydb_ga",
+      "gameId": "GA1",
+      "lotteryName": "Jumbo Bucks Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 47,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "ID3": {
+      "dbCol": "#__lotterydb_id",
+      "gameId": "ID3",
+      "lotteryName": "Weekly Grand",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 32,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "ID4": {
+      "dbCol": "#__lotterydb_id",
+      "gameId": "ID4",
+      "lotteryName": "Idaho Cash",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 45,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+         "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "ID5": {
+      "dbCol": "#__lotterydb_id",
+      "gameId": "ID5",
+      "lotteryName": "5 Star Draw",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 45,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "IL3": {
+      "dbCol": "#__lotterydb_il",
+      "gameId": "IL3",
+      "lotteryName": "LuckyDay Lotto Evening",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 45,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "IL4": {
+      "dbCol": "#__lotterydb_il",
+      "gameId": "IL4",
+      "lotteryName": "Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 50,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "IL5": {
+      "dbCol": "#__lotterydb_il",
+      "gameId": "IL5",
+      "lotteryName": "LuckyDay Lotto Midday",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 45,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "IN8": {
+      "dbCol": "#__lotterydb_in",
+      "gameId": "IN8",
+      "lotteryName": "Cash 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 45,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "IN1": {
+      "dbCol": "#__lotterydb_in",
+      "gameId": "IN1",
+      "lotteryName": "Hoosier Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 46,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "KS3": {
+      "dbCol": "#__lotterydb_ks",
+      "gameId": "KS3",
+      "lotteryName": "Super Cash",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 32,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 25,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "KY1": {
+      "dbCol": "#__lotterydb_ky",
+      "gameId": "KY1",
+      "lotteryName": "Cash Ball",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 4,
+        "main_ball_columns": ["first", "second", "third", "fourth"],
+        "max_main_ball_number": 35,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 25,
+        "extra_ball_column": "fifth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "KY6": {
+      "dbCol": "#__lotterydb_ky",
+      "gameId": "KY6",
+      "lotteryName": "Kentucky 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "LA1": {
+      "dbCol": "#__lotterydb_la",
+      "gameId": "LA1",
+      "lotteryName": "Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 42,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+     "LA5": {
+      "dbCol": "#__lotterydb_la",
+      "gameId": "LA5",
+      "lotteryName": "Easy 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 37,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "MA2": {
+      "dbCol": "#__lotterydb_ma",
+      "gameId": "MA2",
+      "lotteryName": "Megabucks",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 44,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "MA3": {
+      "dbCol": "#__lotterydb_ma",
+      "gameId": "MA3",
+      "lotteryName": "MassCash",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 35,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "MD3": {
+      "dbCol": "#__lotterydb_md",
+      "gameId": "MD3",
+      "lotteryName": "Bonus Match 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 39,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "MD4": {
+      "dbCol": "#__lotterydb_md",
+      "gameId": "MD4",
+      "lotteryName": "Multi Match",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 43,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 39,
+        "extra_ball_column": "seventh",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+      "MI3": {
+    "dbCol": "#__lotterydb_mi",
+    "gameId": "MI3",
+    "lotteryName": "Keno",
+    "lotteryConfig": {
+      "num_main_balls_drawn": 22,
+      "main_ball_columns": [
+        "first",
+        "second",
+        "third",
+        "fourth",
+        "fifth",
+        "sixth",
+        "seventh",
+        "eighth",
+        "nineth",
+        "tenth",
+        "eleventh",
+        "twelveth",
+        "thirtheenth",
+        "fourteenth",
+        "fifteenth",
+        "sixteenth",
+        "seventeenth",
+        "eighteenth",
+        "nineteenth",
+        "twentieth",
+        "twenty_first",
+        "twenty_second"
+      ],
+      "max_main_ball_number": 80,
+      "has_extra_ball": false,
+      "max_skip": 20
+    },
+    "defaultWeights": {
+      "frequency": 100,
+      "skip": 0.0,
+      "historical": 0.0
+      }
+    },
+    "MI6": {
+      "dbCol": "#__lotterydb_mi",
+      "gameId": "MI6",
+      "lotteryName": "Fantasy 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "MI7": {
+      "dbCol": "#__lotterydb_mi",
+      "gameId": "MI7",
+      "lotteryName": "Classic Lotto 47",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 47,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "MN3": {
+      "dbCol": "#__lotterydb_mn",
+      "gameId": "MN3",
+      "lotteryName": "Gopher 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 47,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+      "MN2": {
+      "dbCol": "#__lotterydb_mn",
+      "gameId": "MN2",
+      "lotteryName": "North 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 31,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "MO4": {
+      "dbCol": "#__lotterydb_mo",
+      "gameId": "MO4",
+      "lotteryName": "Show Me Cash",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 99.0,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "MO1": {
+      "dbCol": "#__lotterydb_mo",
+      "gameId": "MO1",
+      "lotteryName": "Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 44,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+	  "MS5": {
+      "dbCol": "#__lotterydb_ms",
+      "gameId": "MS5",
+      "lotteryName": "Match 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 35,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "MT4": {
+      "dbCol": "#__lotterydb_mt",
+      "gameId": "MT4",
+      "lotteryName": "Big Sky Bonus",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 4,
+        "main_ball_columns": ["first", "second", "third", "fourth"],
+        "max_main_ball_number": 31,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 16,
+        "extra_ball_column": "fifth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "MT1": {
+      "dbCol": "#__lotterydb_mt",
+      "gameId": "MT1",
+      "lotteryName": "Montana Cash",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 45,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "NC1": {
+      "dbCol": "#__lotterydb_nc",
+      "gameId": "NC1",
+      "lotteryName": "Cash 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 43,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "NE1": {
+      "dbCol": "#__lotterydb_ne",
+      "gameId": "NE1",
+      "lotteryName": "Pick 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 40,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "NJ2": {
+      "dbCol": "#__lotterydb_nj",
+      "gameId": "NJ2",
+      "lotteryName": "Cash 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 45,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "NJ6": {
+      "dbCol": "#__lotterydb_nj",
+      "gameId": "NJ6",
+      "lotteryName": "Pick 6 Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 46,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "NM2": {
+      "dbCol": "#__lotterydb_nm",
+      "gameId": "NM2",
+      "lotteryName": "Roadrunner Cash",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 37,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+     "NY1": {
+      "dbCol": "#__lotterydb_ny",
+      "gameId": "NY1",
+      "lotteryName": "Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 59,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "NY2": {
+      "dbCol": "#__lotterydb_ny",
+      "gameId": "NY2",
+      "lotteryName": "Take 5 Evening",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "NY5": {
+      "dbCol": "#__lotterydb_ny",
+      "gameId": "NY5",
+      "lotteryName": "Take 5 Midday",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "NY3": {
+      "dbCol": "#__lotterydb_ny",
+      "gameId": "NY3",
+      "lotteryName": "Pick 10",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 10,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "nineth", "tenth"],
+        "max_main_ball_number": 80,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "OH3": {
+      "dbCol": "#__lotterydb_oh",
+      "gameId": "OH3",
+      "lotteryName": "Rolling Cash 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+       }
+    },
+    "OH5": {
+      "dbCol": "#__lotterydb_oh",
+      "gameId": "OH5",
+      "lotteryName": "Classic Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 49,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "OK1": {
+      "dbCol": "#__lotterydb_ok",
+      "gameId": "OK1",
+      "lotteryName": "Cash 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 36,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "OR1": {
+      "dbCol": "#__lotterydb_or",
+      "gameId": "OR1",
+      "lotteryName": "Megabucks",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 48,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+      "OR2": {
+      "dbCol": "#__lotterydb_or",
+      "gameId": "OR2",
+      "lotteryName": "Win For Life",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 4,
+        "main_ball_columns": ["first", "second", "third", "fourth"],
+        "max_main_ball_number": 77,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "PA2": {
+      "dbCol": "#__lotterydb_pa",
+      "gameId": "PA2",
+      "lotteryName": "Cash 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 43,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "PA3": {
+      "dbCol": "#__lotterydb_pa",
+      "gameId": "PA3",
+      "lotteryName": "Match 6 Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 49,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "PR3": {
+      "dbCol": "#__lotterydb_pr",
+      "gameId": "PR3",
+      "lotteryName": "Loto Plus",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 35,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 10,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "RI2": {
+      "dbCol": "#__lotterydb_ri",
+      "gameId": "RI2",
+      "lotteryName": "Wild Money",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 38,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "SC2": {
+      "dbCol": "#__lotterydb_sc",
+      "gameId": "SC2",
+      "lotteryName": "Palmetto Cash 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 42,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "SD1": {
+      "dbCol": "#__lotterydb_sd",
+      "gameId": "SD1",
+      "lotteryName": "Dakota Cash",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 35,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "TN3": {
+      "dbCol": "#__lotterydb_tn",
+      "gameId": "TN3",
+      "lotteryName": "Tennessee Cash",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 35,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 5,
+        "extra_ball_column": "sixth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "TN5": {
+      "dbCol": "#__lotterydb_tn",
+      "gameId": "TN5",
+      "lotteryName": "Daily Tennessee Jackpot",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 38,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "TX3": {
+      "dbCol": "#__lotterydb_tx",
+      "gameId": "TX3",
+      "lotteryName": "Two Step",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 4,
+        "main_ball_columns": ["first", "second", "third", "fourth"],
+        "max_main_ball_number": 35,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 35,
+        "extra_ball_column": "fifth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "TX2": {
+      "dbCol": "#__lotterydb_tx",
+      "gameId": "TX2",
+      "lotteryName": "Cash 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 35,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 35,
+        "extra_ball_column": "fifth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+      "TXG": {
+      "dbCol": "#__lotterydb_tx",
+      "gameId": "TXG",
+      "lotteryName": "All or Nothing Day",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 12,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "nineth", "tenth", "eleventh", "twelveth"],
+        "max_main_ball_number": 24,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 0,
+        "max_extra_ball_number": 0,
+        "extra_ball_column": "fifth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+      "TXH": {
+      "dbCol": "#__lotterydb_tx",
+      "gameId": "TXH",
+      "lotteryName": "All or Nothing Evening",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 12,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "nineth", "tenth", "eleventh", "twelveth"],
+        "max_main_ball_number": 24,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 0,
+        "max_extra_ball_number": 0,
+        "extra_ball_column": "fifth",
+        "max_skip": 30
+      },
+       "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+      "TXF": {
+      "dbCol": "#__lotterydb_tx",
+      "gameId": "TXF",
+      "lotteryName": "All or Nothing Morning",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 12,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "nineth", "tenth", "eleventh", "twelveth"],
+        "max_main_ball_number": 24,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 0,
+        "max_extra_ball_number": 0,
+        "extra_ball_column": "fifth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+      "TXI": {
+      "dbCol": "#__lotterydb_tx",
+      "gameId": "TXI",
+      "lotteryName": "All or Nothing Night",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 12,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "nineth", "tenth", "eleventh", "twelveth"],
+        "max_main_ball_number": 24,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 0,
+        "max_extra_ball_number": 0,
+        "extra_ball_column": "fifth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "TX1": {
+      "dbCol": "#__lotterydb_tx",
+      "gameId": "TX1",
+      "lotteryName": "Texas Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 54,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 99.0,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "VA3": {
+      "dbCol": "#__lotterydb_va",
+      "gameId": "VA3",
+      "lotteryName": "Bank a Million",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 40,
+        "has_extra_ball": true,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 40,
+        "extra_ball_column": "seventh",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "VA2": {
+      "dbCol": "#__lotterydb_va",
+      "gameId": "VA2",
+      "lotteryName": "Cash 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 45,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "VAM": {
+      "dbCol": "#__lotterydb_va",
+      "gameId": "VAM",
+      "lotteryName": "Cash Pop Coffee Break",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 1,
+        "main_ball_columns": ["first"],
+        "max_main_ball_number": 15,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "WA6": {
+      "dbCol": "#__lotterydb_wa",
+      "gameId": "WA6",
+      "lotteryName": "Hit 5",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 42,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "WA1": {
+      "dbCol": "#__lotterydb_wa",
+      "gameId": "WA1",
+      "lotteryName": "Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 49,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+  "WA4": {
+    "dbCol": "#__lotterydb_wa",
+    "gameId": "WA4",
+    "lotteryName": "Keno",
+    "lotteryConfig": {
+      "num_main_balls_drawn": 20,
+      "main_ball_columns": [
+        "first",
+        "second",
+        "third",
+        "fourth",
+        "fifth",
+        "sixth",
+        "seventh",
+        "eighth",
+        "nineth",
+        "tenth",
+        "eleventh",
+        "twelveth",
+        "thirtheenth",
+        "fourteenth",
+        "fifteenth",
+        "sixteenth",
+        "seventeenth",
+        "eighteenth",
+        "nineteenth",
+        "twentieth"
+      ],
+      "max_main_ball_number": 80,
+      "has_extra_ball": false,
+      "max_skip": 30
+    },
+    "defaultWeights": {
+      "frequency": 100,
+      "skip": 0.0,
+      "historical": 0.0
+    }
+    },
+     "WA7": {
+      "dbCol": "#__lotterydb_wa",
+      "gameId": "WA7",
+      "lotteryName": "Lotto",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 4,
+        "main_ball_columns": ["first", "second", "third", "fourth"],
+        "max_main_ball_number": 24,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "WI2": {
+      "dbCol": "#__lotterydb_wi",
+      "gameId": "WI2",
+      "lotteryName": "Super Cash",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 39,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "WI1": {
+      "dbCol": "#__lotterydb_wi",
+      "gameId": "WI1",
+      "lotteryName": "Megabucks",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 49,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+      "WI8": {
+      "dbCol": "#__lotterydb_wi",
+      "gameId": "WI8",
+      "lotteryName": "All or Nothing Midday",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 11,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "nineth", "tenth", "eleventh"],
+        "max_main_ball_number": 22,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 35,
+        "extra_ball_column": "fifth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 0.0,
+        "skip": 0.0,
+        "historical": 100
+      }
+    },
+      "WI7": {
+      "dbCol": "#__lotterydb_wi",
+      "gameId": "WI7",
+      "lotteryName": "All or Nothing Midday",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 11,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "nineth", "tenth", "eleventh"],
+        "max_main_ball_number": 22,
+        "has_extra_ball": false,
+        "num_extra_balls_drawn": 1,
+        "max_extra_ball_number": 35,
+        "extra_ball_column": "fifth",
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+      "WV1": {
+      "dbCol": "#__lotterydb_wv",
+      "gameId": "WV1",
+      "lotteryName": "Cash 25",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 6,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth", "sixth"],
+        "max_main_ball_number": 25,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    },
+    "WY1": {
+      "dbCol": "#__lotterydb_wy",
+      "gameId": "WY1",
+      "lotteryName": "Cowboy Draw",
+      "lotteryConfig": {
+        "num_main_balls_drawn": 5,
+        "main_ball_columns": ["first", "second", "third", "fourth", "fifth"],
+        "max_main_ball_number": 45,
+        "has_extra_ball": false,
+        "max_skip": 30
+      },
+      "defaultWeights": {
+        "frequency": 100,
+        "skip": 0.0,
+        "historical": 0.0
+      }
+    }
+  }
+}
