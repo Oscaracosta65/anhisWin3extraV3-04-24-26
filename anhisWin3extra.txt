@@ -1446,28 +1446,28 @@ $pick3Plays = [
 // -------------------------------------------------------------------------
 $bankrollPlansDaily = [
     [
-        'budget'   => 'Minimal — $1 per draw',
+        'budget'   => 'Entry-level — single line per draw',
         'lines'    => '1 line',
         'style'    => 'Single position-active play',
         'priority' => 'Stick to one consistent play and track results over time.',
         'note'     => 'Focused and trackable — ideal for beginners.',
     ],
     [
-        'budget'   => 'Light — $2 per draw',
+        'budget'   => 'Light — two lines per draw',
         'lines'    => '2 lines',
         'style'    => 'Position-active + balanced play',
         'priority' => 'Keep one frequency-based play with a mixed-signal backup.',
         'note'     => 'Two-line structure helps compare different signal sources.',
     ],
     [
-        'budget'   => 'Moderate — $5 per draw',
+        'budget'   => 'Moderate — five lines per draw',
         'lines'    => '5 lines',
         'style'    => 'Mix of all four position profile types, plus one rotation',
         'priority' => 'Cover each signal family across the draw window to track behavioral patterns.',
         'note'     => 'Better for analytical tracking over a larger daily sample.',
     ],
     [
-        'budget'   => 'Structured — $10 per draw',
+        'budget'   => 'Structured — ten lines per draw',
         'lines'    => '10 lines',
         'style'    => 'Full profile rotation plus extras',
         'priority' => 'Systematic rotation across all position data signals.',
@@ -1478,30 +1478,34 @@ $bankrollPlansDaily = [
 // -------------------------------------------------------------------------
 // Guide / FAQ snippets for Pick 3 daily game
 // -------------------------------------------------------------------------
+// NOTE: do NOT apply htmlspecialchars() here — the label is embedded into $guideFaq strings
+// that are re-escaped at HTML output time with htmlspecialchars(), so pre-escaping would double-encode.
 $bonusLabelForFaq = (!empty($bonusSlots) && !empty($bonusSlots[0]['label']))
-    ? htmlspecialchars((string) $bonusSlots[0]['label'], ENT_QUOTES, 'UTF-8')
-    : 'extra ball';
-$guideFaq = [
-    [
-        'q' => 'Do position frequencies predict the next draw?',
-        'a' => 'No. Position frequencies summarize historical behavior within the selected window. Each draw is an independent event and historical patterns do not guarantee future outcomes.',
-    ],
-    [
+    ? (string) $bonusSlots[0]['label']
+    : '';
+
+$guideFaq = [];
+$guideFaq[] = [
+    'q' => 'Do position frequencies predict the next draw?',
+    'a' => 'No. Position frequencies summarize historical behavior within the selected window. Each draw is an independent event and historical patterns do not guarantee future outcomes.',
+];
+if ($bonusLabelForFaq !== '') {
+    $guideFaq[] = [
         'q' => 'What is the ' . $bonusLabelForFaq . '?',
-        'a' => 'The ' . $bonusLabelForFaq . ' is drawn separately alongside the main digits. It is stored in a separate game record in our system. Always verify exact payout rules and eligibility at the official state lottery website.',
-    ],
-    [
-        'q' => 'How is the combination frequency table useful?',
-        'a' => 'It shows which exact ' . (int) $mainBallCount . '-digit numbers have appeared most often in the selected window. Use this as historical context only, not as a selection guide.',
-    ],
-    [
-        'q' => 'Why show recency data alongside frequency?',
-        'a' => 'Recency helps visualize how long a particular digit has been absent from a specific position. Combined with frequency, it gives a broader behavioral picture than frequency data alone.',
-    ],
-    [
-        'q' => 'How should I use the position-based play recommendations?',
-        'a' => 'These are structured planning frameworks built from historical frequency and recency data. They help you organize choices with clearer context. They are not predictions and each draw remains independent.',
-    ],
+        'a' => 'The ' . $bonusLabelForFaq . ' is drawn separately alongside the main digits. It is stored in a separate linked game record in this system. Always verify exact payout rules and eligibility at the official state lottery website.',
+    ];
+}
+$guideFaq[] = [
+    'q' => 'How is the combination frequency table useful?',
+    'a' => 'It shows which exact ' . (int) $mainBallCount . '-digit numbers have appeared most often in the selected window. Use this as historical context only, not as a selection guide.',
+];
+$guideFaq[] = [
+    'q' => 'Why show recency data alongside frequency?',
+    'a' => 'Recency helps visualize how long a particular digit has been absent from a specific position. Combined with frequency, it gives a broader behavioral picture than frequency data alone.',
+];
+$guideFaq[] = [
+    'q' => 'How should I use the position-based play recommendations?',
+    'a' => 'These are structured planning frameworks built from historical frequency and recency data. They help you organize choices with clearer context. They are not predictions and each draw remains independent.',
 ];
 ?>
 <style>
