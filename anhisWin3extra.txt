@@ -1535,7 +1535,7 @@ if (!empty($guideFaq)) {
 .skai-note{margin-top:14px;padding:14px 16px;border-radius:16px;background:linear-gradient(180deg, #F8FAFE 0%, #FFFFFF 100%);border:1px solid var(--line);color:var(--text-soft);font-size:13px;line-height:1.7}
 .skai-two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}.skai-two-col>*{min-width:0}
 .skai-history-list{display:grid;gap:10px}
-.skai-history-item{display:grid;grid-template-columns:220px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(180deg, #FFFFFF 0%, #FAFBFF 100%)}
+.skai-history-item{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr) auto;gap:12px;align-items:center;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(180deg, #FFFFFF 0%, #FAFBFF 100%)}
 .skai-history-name{font-size:14px;line-height:1.35;font-weight:850;color:var(--deep-navy)}
 .skai-history-date{font-size:13px;line-height:1.55;color:var(--text-soft)}
 .skai-history-badge{display:inline-flex;align-items:center;justify-content:center;min-width:110px;min-height:36px;padding:8px 12px;border-radius:999px;background:var(--grad-radiant);color:#fff;font-size:12px;line-height:1.2;font-weight:850}
@@ -1583,8 +1583,8 @@ table.skai-table tbody tr:hover{background:rgba(28,102,255,.04)}
 .skai-utility-link{min-height:42px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--grad-slate);color:var(--deep-navy);font-size:13px;line-height:1.3;font-weight:850}
 .skai-method-note{padding:16px;border-radius:16px;border:1px solid var(--line);background:linear-gradient(180deg, #FAFBFF 0%, #FFFFFF 100%);font-size:14px;line-height:1.8;color:var(--text-soft)}
 .skai-method-note strong{color:var(--deep-navy)}
-@media (max-width:1080px){.skai-hero-top{grid-template-columns:96px minmax(0,1fr)}.skai-result-panel{grid-column:1 / -1}.skai-strip,.skai-tool-grid,.skai-overview-grid,.skai-two-col{grid-template-columns:1fr}.skai-hero-actions,.skai-advanced-links{grid-template-columns:1fr}.skai-utility-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.skai-chart-frame--tall{height:420px}}
-@media (max-width:780px){.skai-page{padding:14px 10px 24px}.skai-title{font-size:26px}.skai-section-head{padding:16px 14px 12px}.skai-section-body{padding:14px}.skai-strip{grid-template-columns:1fr}.skai-history-item{grid-template-columns:1fr;align-items:start}.skai-meta-row{grid-template-columns:1fr}.skai-tabs{border-radius:18px}.skai-utility-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:1080px){.skai-hero-top{grid-template-columns:96px minmax(0,1fr)}.skai-result-panel{grid-column:1 / -1}.skai-strip,.skai-tool-grid,.skai-overview-grid,.skai-two-col{grid-template-columns:1fr}.skai-hero-actions,.skai-advanced-links{grid-template-columns:1fr}.skai-utility-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.skai-chart-frame--tall{height:420px}.skai-history-item{grid-template-columns:1fr;align-items:start}}
+@media (max-width:780px){.skai-page{padding:14px 10px 24px}.skai-title{font-size:26px}.skai-section-head{padding:16px 14px 12px}.skai-section-body{padding:14px}.skai-strip{grid-template-columns:1fr}.skai-meta-row{grid-template-columns:1fr}.skai-tabs{border-radius:18px}.skai-utility-grid{grid-template-columns:1fr 1fr}}
 .skai-simple-note{margin-top:12px;padding:12px 14px;border-radius:14px;border:1px solid rgba(28,102,255,.16);background:linear-gradient(180deg,rgba(28,102,255,.05) 0%,#FFFFFF 100%);color:var(--text-soft);font-size:13px;line-height:1.65}
 .skai-simple-note strong{color:var(--deep-navy)}
 .skai-play-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
